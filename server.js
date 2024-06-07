@@ -8,6 +8,8 @@ const AgeMiddleware = require('./middleware/AgeMiddleware')
 app.get('/',(req,res)=>{
     res.send('welcome')
 })
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 app.use('/api',authRoutes);
 
 app.listen(5000,()=>{ 
